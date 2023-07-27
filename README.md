@@ -50,11 +50,13 @@ To use the Sudoku Solver locally, follow these steps:
 Simply open the `index.html` file in your web browser, and you'll be greeted with the Sudoku Solver interface. Enter the given numbers in the puzzle and click the "Solve" button to get the solution.
 
 ## Screenshots
-
+### Start State
 ![Screenshot 1](Sudoku_Start_img.png)
 
+### Filled State
 ![Screenshot 2](Sudoku_Filled_img.png)
 
+### Solved State
 ![Screenshot 3](Sudoku_Solved_img.png)
 
 ## Contributing
