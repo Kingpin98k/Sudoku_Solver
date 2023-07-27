@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .box {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .box input {
+    height: 80px;
+    width: 80px;
+    font-size: 5em;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #solveBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #solveBtn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add additional styles for .ab class */
+  .ab {
+    display: inline-block;
+    height: 80px;
+    width: 86px;
+    font-size: 5em;
+    text-align: center;
+    color: #00AEAD;
+  }
+  
+  /* Add additional styles for #dt class */
+  #dt {
+    height: 80px;
+    width: 80px;
+    font-size: 5em;
+    text-align: center;
+  }
+
+.dtt{
+    border-right: solid;
+}
+  
