@@ -1,4 +1,5 @@
 # Sudoku Solver - HTML, CSS, and JS
+## [Use Solver](https://sudoku-solver-llms.vercel.app/)
 
 ![Sudoku Solver](SudokuSolver_head_img.png)
 
