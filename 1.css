@@ -1,63 +1,92 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-  }
-  
-  .container {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .box {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .box input {
-    height: 80px;
-    width: 80px;
-    font-size: 5em;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  #solveBtn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #solveBtn:hover {
-    background-color: #45a049;
-  }
-  
-  /* Add additional styles for .ab class */
-  .ab {
-    display: inline-block;
-    height: 80px;
-    width: 86px;
-    font-size: 5em;
-    text-align: center;
-    color: #00AEAD;
-  }
-  
-  /* Add additional styles for #dt class */
-  #dt {
-    height: 80px;
-    width: 80px;
-    font-size: 5em;
-    text-align: center;
-  }
-
-.dtt{
-    border-right: solid;
+	font-family: Arial, sans-serif;
+	width: 100%;
+	height: 100vh;
+	line-height: 1.6;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* justify-content: center; */
+	padding: 20px; /* Add padding around the whole application */
 }
-  
+
+html {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	overflow-x: hidden;
+	font-size: 62.5%;
+}
+
+/* Styles for .boxes and .box */
+.boxes {
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(9, 1fr);
+	gap: 0.8rem;
+	height: 100vmin;
+	width: 90vmin;
+	margin: auto;
+}
+
+.box_container {
+	width: 100%;
+}
+
+/* Styles for input[type="number"] */
+input[type="number"] {
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	height: 100%;
+	width: 100%;
+	font-size: large;
+	transition: all 50ms;
+}
+
+/* Styles for .ab class */
+.ab {
+	align-items: center;
+	justify-content: space-evenly;
+	display: flex;
+	width: 100vmin;
+	font-size: 300%;
+	color: #00aead;
+}
+
+/* Button styles */
+#solveBtn {
+	padding: 1rem 2rem;
+	font-size: 1.6rem;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin: 2rem;
+	cursor: pointer;
+	height: 4rem;
+	width: 20rem;
+	padding: 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input:hover {
+	box-shadow: inset 0 0 0.4rem #01ab897a;
+}
+
+#solveBtn:hover {
+	background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+	.ab {
+		font-size: 200%;
+	}
+}
