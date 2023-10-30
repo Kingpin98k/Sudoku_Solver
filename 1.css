@@ -71,9 +71,16 @@ input[type="number"] {
 	padding: 10px;
 }
 
+/* Remove spinner for number input fields in Firefox */
+input[type="number"] {
+	-moz-appearance: textfield; /* Display as a regular text input in Firefox */
+	appearance: textfield; /* Display as a regular text input in other browsers */
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
+	-moz-appearance: none; /* Display as a regular text input */
 	margin: 0;
 }
 

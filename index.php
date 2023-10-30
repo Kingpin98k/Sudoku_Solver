@@ -18,7 +18,7 @@
 			<p>8</p>
 			<p>9</p>
 		</div>
-		<div class="box_container">
+		<form action="controle.php">
 			<div class="boxes">
 				<input
 					type="number"
@@ -750,8 +750,8 @@
 					inputmode="numeric"
 				/>
 			</div>
-		</div>
-		<button id="solveBtn">Solve Sudoku</button>
+			<button type="submit" id="solveBtn">Solve Sudoku</button>
+		</form>
 	</body>
 	<script src="index.js"></script>
 </html>
