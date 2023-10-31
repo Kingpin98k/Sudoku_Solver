@@ -29,11 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $answer = $user['answer'];
     
     if ($stmt->execute()) {
-        $response = array("message" => "Data inserted successfully");
-        echo json_encode($response);
+        echo "Data inserted successfully.";
     } else {
-        $response = array("message" => "Error: " . $stmt->error);
-        echo json_encode($response);
+        echo "Error: " . $stmt->error;
     }
 
     $stmt->close();
