@@ -97,62 +97,25 @@ function createMatrix() {
 	const matrix = extractBoxValues(boxElements);
 	return matrix;
 }
-
 function solveAndDisplaySudoku() {
 	let matrix = createMatrix();
 	const mtrx = matrix.map((row) => [...row]);
 	const boxes = document.querySelectorAll("#dt");
 
-	fetch("find_before.php", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/x-www-form-urlencoded",
-		},
-		body: `question=${JSON.stringify(mtrx)}`,
-	})
-		.then((response) => response.json()) // Treat the response as JSON
-		.then((data) => {
-			if (data.error) {
-				solveSudoku(matrix);
-				const question = JSON.stringify(mtrx);
-				const answer = JSON.stringify(matrix);
-				fetch("controle.php", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json ;charset=utf-8",
-					},
-					body: JSON.stringify({ question: question, answer: answer }),
-				})
-					.then((response) => response.json())
-					.then((data) => {
-						console.log("been here", data);
-						// You can handle the response from PHP here
-					})
-					.catch((error) => {
-						console.error("Error:", error);
-					});
+	// Solve the Sudoku
+	solveSudoku(matrix);
+
+	// Display the solved Sudoku
+	for (let i = 0; i < 9; i++) {
+		for (let j = 0; j < 9; j++) {
+			boxes[i * 9 + j].value = matrix[i][j]; // Update input values
+			if (mtrx[i][j] !== ".") {
+				boxes[i * 9 + j].style.color = "#DE3700"; // Change the text color for original values
 			} else {
-				// Handle the JSON response with the answer
-				matrix = JSON.parse(data.answer);
+				boxes[i * 9 + j].style.color = "#2AA10F"; // Change the text color for solved values
 			}
-
-			console.log(matrix);
-
-			for (let i = 0; i < 9; i++) {
-				for (let j = 0; j < 9; j++) {
-					boxes[i * 9 + j].value = matrix[i][j]; // Update input values
-					if (mtrx[i][j] !== ".") {
-						boxes[i * 9 + j].style.color = "#DE3700"; // Change the text color for original values
-					} else {
-						boxes[i * 9 + j].style.color = "#2AA10F"; // Change the text color for solved values
-					}
-				}
-			}
-		})
-		.catch((error) => {
-			console.log("Erros is coming bitch!!");
-			console.log("Error:", error);
-		});
+		}
+	}
 }
 
 document.querySelector("form").addEventListener("submit", function (event) {
